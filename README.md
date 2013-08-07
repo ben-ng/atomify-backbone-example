@@ -1,5 +1,5 @@
-Atomify Example App
-===================
+Atomify Backbone Example App
+============================
 
 ### Description
 
