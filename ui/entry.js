@@ -1,13 +1,11 @@
-var $ = require('jquery-browserify')
-  , overlay = require('ios-overlay')
+var overlay = require('ios-overlay')
   , SearchForm  = require('./search-form/')
 
 window.search = new SearchForm({
-  el: $('#search-target')
-, label: 'Search this site:'
+  label: 'Search this site:'
 })
 
-search.$el.on('search', function () {
+search.on('search', function () {
 
   var searchOverlay = overlay({text: 'searching'})
 
@@ -22,4 +20,4 @@ search.$el.on('search', function () {
   }, 1000)
 })
 
-search.render()
+search.$el.appendTo('#search-target')

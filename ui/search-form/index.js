@@ -1,33 +1,24 @@
-var template = require('./search-form.html.hbs')
+var View = require('ribcage-view')
   , Button = require('../button/')
-  , $ = require('jquery-browserify')
 
-var SearchForm = function (opts) {
-  this.opts = opts || {}
-  this.$el = this.opts.el || $('body')
-}
-
-SearchForm.prototype.context = function () {
-  return {
-    label: this.opts.label || 'Search'
+var SearchForm = View.extend({
+  template: require('./search-form.html.hbs')
+, className: 'search-form'
+, context: function () {
+    return {
+      label: this.options.label || 'Search'
+    }
   }
-}
-
-SearchForm.prototype.render = function () {
-  var self = this
-    , data = this.context()
-    , button = new Button({
-        value: 'search'
-      , action: function () {
-          self.$el.trigger('search')
-        }
-      })
-
-  this.$el.append(template(data))
-  this.$el.addClass('search-form')
-  this.$el.find('.button-target').replaceWith(button.$el)
-}
+, afterRender: function () {
+    var self = this
+      , button = new Button({
+          value: 'search'
+        , action: function () {
+            self.trigger('search')
+          }
+        })
+    this.appendSubview(button)
+  }
+});
 
 module.exports = SearchForm
-
-
