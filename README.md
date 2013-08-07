@@ -6,8 +6,8 @@ Atomify Backbone Example App
 This is a simple example app to show off what a [atomify](http://github.com/techwraith/atomify) app might look like. If you want to try it out yourself:
 
 ```
-git clone git@github.com:Techwraith/atomify-example.git
-cd atomify-example
+git clone git@github.com:Techwraith/atomify-backbone-example.git
+cd atomify-backbone-example
 npm install
 node server.js
 open http://localhost:3000
