@@ -16,7 +16,7 @@
     "handlebars-runtime": "~1.0.12",
     "brfs": "0.0.6",
     "hbsfy": "~0.1.5",
-    "atomify": "0.0.6",
+    "atomify": "https://github.com/ben-ng/atomify/archive/minifyify.tar.gz",
     "st": "~0.2.1",
     "ios-overlay": "0.0.1",
     "jquery-browserify": "~1.8.1",
